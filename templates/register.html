@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow p-4 border-0">
+            <div class="text-center mb-4">
+                <i class="bi bi-person-plus-fill text-primary" style="font-size: 3rem;"></i>
+                <h2 class="fw-bold">Create Account</h2>
+            </div>
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Choose a username" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Matric Number</label>
+                    <input type="text" name="matric_no" class="form-control" placeholder="e.g. 2021/12345">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Current Level</label>
+                    <select name="level" class="form-select">
+                        <option>100L</option><option>200L</option><option>300L</option>
+                        <option>400L</option><option>500L</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold small">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Register Now</button>
+            </form>
+            <div class="text-center mt-4 border-top pt-3">
+                <p class="mb-0">Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
